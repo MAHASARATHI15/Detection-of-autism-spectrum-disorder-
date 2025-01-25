@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection </title>
+    <style>
+        /* Full-page and flexbox for centering */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Stack heading and buttons vertically */
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out; /* Smooth transition */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 30px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Individual button colors */
+        .btn1 {
+            background-color: #007BFF; /* Blue */
+        }
+
+        .btn2 {
+            background-color: #28A745; /* Green */
+        }
+
+        /* Button hover effect */
+        button:hover {
+            transform: scale(1.1); /* Make button grow slightly on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Voice</h1>
+    <p>
+         Individuals with autism often have unique speech patterns, including differences in pitch, volume, and rhythm. Research has shown that these differences can affect social communication and may lead to misunderstandings in conversations.
+    </p>
+
+    <h1>image</h1>
+    <p>
+        Many individuals with autism are visual learners and may excel in processing visual information. This strength can be harnessed in educational settings using visual supports, such as charts, diagrams, and images.
+    </p>
+
+    <div class="button-container">
+        <a href="  http://127.0.0.1:5000" style="text-decoration: none;">
+            <button class="btn1">AUDIO</button>
+        </a>
+        
+        <a href="http://127.0.0.1:6074" style="text-decoration: none;">
+            <button class="btn2">IMAGE</button>
+        </a>
+    </div>
+
+    <script>
+        // Array of image URLs
+        const images = [
+            'bg1.png', // Replace with your image URLs
+            'bg2.png',
+            'bg1.png'
+        ];
+
+        let currentIndex = 0;
+        const body = document.body;
+
+        // Function to change the background image
+        function changeBackgroundImage() {
+            body.style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to first image
+        }
+
+        // Change background every 5 seconds (5000 milliseconds)
+        setInterval(changeBackgroundImage, 5000);
+
+        // Set initial background image
+        changeBackgroundImage();
+    </script>
+</body>
+</html>
